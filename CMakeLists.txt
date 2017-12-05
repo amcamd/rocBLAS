@@ -156,6 +156,23 @@ endif( )
 # CMake list of machine targets
 set( AMDGPU_TARGETS gfx803;gfx900 CACHE STRING "List of specific machine types for library to target" )
 
+include(EnableCompilerWarnings)
+include(ROCMClangTidy)
+rocm_enable_clang_tidy(
+    CHECKS 
+        bugprone-*
+        clang-analyzer-*
+        clang-diagnostic-*
+        cert-*
+    ERRORS
+        *
+    HEADER_FILTER
+        "hpp$"
+    EXTRA_ARGS
+        -DROCBLAS_USE_CLANG_TIDY
+    ANALYZE_TEMPORARY_DTORS ON
+)
+
 add_subdirectory( library )
 
 # Build clients of the library

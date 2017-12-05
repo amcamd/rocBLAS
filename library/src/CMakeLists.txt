@@ -118,6 +118,8 @@ add_library( rocblas
   ${relative_rocblas_headers_public}
   ${rocblas_auxiliary_source}
 )
+rocm_clang_tidy_check(rocblas)
+target_link_libraries(rocblas PRIVATE warnings)
 
 add_library( roc::rocblas ALIAS rocblas )
 
