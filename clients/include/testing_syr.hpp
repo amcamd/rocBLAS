@@ -16,6 +16,9 @@
 #include "unit.h"
 #include "flops.h"
 
+#include "benchmark.hpp"
+#include "typeinfo"
+
 using namespace std;
 
 template <typename T>
@@ -207,42 +210,56 @@ rocblas_status testing_syr(Arguments argus)
 
     if(argus.timing)
     {
-        int number_cold_calls = 2;
-        int number_hot_calls  = 100;
-        CHECK_ROCBLAS_ERROR(rocblas_set_pointer_mode(handle, rocblas_pointer_mode_host));
 
-        for(int iter = 0; iter < number_cold_calls; iter++)
-        {
-            rocblas_syr<T>(handle, uplo, N, (T*)&h_alpha, dx, incx, dA_1, lda);
+        //using new benchmark infrastructure
+        auto my_lambda = [&] {rocblas_syr<T>(handle, uplo, N, (T*)&h_alpha, dx, incx, dA_1, lda);};
+        Benchmark<decltype(my_lambda), std::chrono::microseconds> stats(my_lambda, argus.num_iters_per_experiment, argus.num_experiments, argus.num_iters_before_experiment, argus.sleep_time_between_experiments);
+        stats.accumulate_statistics();
+        //the following formulas assume the benchmark uses microseconds
+        double gflops_min = syr_gflop_count<T>(N)/(stats.run_time_max/stats.num_iters_per_experiment) * 1e6 * 1;
+        double gflops_avg = syr_gflop_count<T>(N)/(stats.run_time_avg/stats.num_iters_per_experiment) * 1e6 * 1;
+        double gflops_max = syr_gflop_count<T>(N)/(stats.run_time_min/stats.num_iters_per_experiment) * 1e6 * 1;
+        double gflops_stddev = syr_gflop_count<T>(N)/stats.run_time_std_dev * 1e6 * 1;
+        double bandwidth_min = (2.0 * N * (N + 1)) / 2 * sizeof(T) / (stats.run_time_max/stats.num_iters_per_experiment) / 1e3;
+        double bandwidth_avg = (2.0 * N * (N + 1)) / 2 * sizeof(T) / (stats.run_time_avg/stats.num_iters_per_experiment) / 1e3;
+        double bandwidth_max = (2.0 * N * (N + 1)) / 2 * sizeof(T) / (stats.run_time_min/stats.num_iters_per_experiment) / 1e3;
+        double bandwidth_stddev = (2.0 * N * (N + 1)) / 2 * sizeof(T) / stats.run_time_std_dev / 1e3;
+
+
+        //prepare strings to print
+        std::string labels = "N,alpha,incx,lda,rocblas-Gflops-min,rocblas-Gflops-avg,rocblas-Gflops-max,rocblas-Gflops-stddev,rocblas-GB/s-min,rocblas-GB/s-avg,rocblas-GB/s-max,rocblas-GB/s-stddev,CPU-Gflops,num_iters_per_experiment,num_experiments,num_iters_before_experiment,sleep_time_between_experiments,norm_error_host_ptr,norm_error_dev_ptr,data";
+        stringstream ssdata;
+        ssdata << N << "," << h_alpha << "," << incx << "," << lda << "," 
+              << gflops_min << "," << gflops_avg << "," << gflops_max << "," << gflops_stddev << ","
+              << bandwidth_min << "," << bandwidth_avg << "," << bandwidth_max << "," << bandwidth_stddev << ","
+              << argus.num_iters_per_experiment << "," << argus.num_experiments << "," << argus.num_iters_before_experiment << "," << argus.sleep_time_between_experiments;
+          if(argus.norm_check)
+              ssdata << "," << cblas_gflops << "," << rocblas_error_1 << "," << rocblas_error_2;
+          else
+              ssdata << ",,,";
+          if(argus.print_data)
+              for (auto e : stats.run_times)
+                ssdata << "," << e;
+          else
+              ssdata << ",";
+          std::string data = ssdata.str();
+
+        //print to file or stdout
+        string precision;
+        if (argus.to_file == 1){
+          string precision (1,type2char<T>());
+          string filename = precision + "syr";
+          //stats.print_to_file<decltype(my_lambda), std::chrono::microseconds>(filename, labels, data, stats);
+          stats.print_to_file(filename, labels, data, stats, handle->device_properties);
+
+        }
+        else if(argus.to_file == 0){
+          std::cout << labels << std::endl;
+          std::cout << data << std::endl;
         }
 
-        gpu_time_used = get_time_us(); // in microseconds
-
-        for(int iter = 0; iter < number_hot_calls; iter++)
-        {
-            rocblas_syr<T>(handle, uplo, N, (T*)&h_alpha, dx, incx, dA_1, lda);
-        }
-
-        gpu_time_used     = (get_time_us() - gpu_time_used) / number_hot_calls;
-        rocblas_gflops    = syr_gflop_count<T>(N) / gpu_time_used * 1e6 * 1;
-        rocblas_bandwidth = (2.0 * N * (N + 1)) / 2 * sizeof(T) / gpu_time_used / 1e3;
-
-        // only norm_check return an norm error, unit check won't return anything
-        cout << "N,alpha,incx,lda,rocblas-Gflops,rocblas-GB/s";
-
-        if(argus.norm_check)
-            cout << ",CPU-Gflops,norm_error_host_ptr,norm_error_dev_ptr";
-
-        cout << endl;
-
-        cout << N << "," << h_alpha << "," << incx << "," << lda << "," << rocblas_gflops << ","
-             << rocblas_bandwidth;
-
-        if(argus.norm_check)
-            cout << "," << cblas_gflops << "," << rocblas_error_1 << "," << rocblas_error_2;
-
-        cout << endl;
     }
 
     return rocblas_status_success;
 }
+

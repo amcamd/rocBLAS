@@ -3,6 +3,7 @@
  * ************************************************************************ */
 
 #include <iostream>
+#include <string>
 #include <stdio.h>
 #include <boost/program_options.hpp>
 
@@ -50,6 +51,31 @@ int main(int argc, char* argv[])
     po::options_description desc("rocblas client command line options");
     desc.add_options()("help,h", "produces this help message")
         // clang-format off
+
+        ("niters",
+         po::value<rocblas_int>(&argus.num_iters_per_experiment)->default_value(1),
+         "number of iterations per experiment")
+
+        ("nexpers",
+         po::value<rocblas_int>(&argus.num_experiments)->default_value(1),
+         "number of independent experiments to take statistics over")
+
+        ("nsleep",
+         po::value<rocblas_int>(&argus.sleep_time_between_experiments)->default_value(0),
+         "number of milliseconds to sleep between experiments")
+
+        ("nitersbefore",
+         po::value<rocblas_int>(&argus.num_iters_before_experiment)->default_value(0),
+         "number of iterations to run just before each experiment to avoid 'cold' execution")
+
+        ("to_file",
+         po::value<bool>(&argus.to_file)->default_value(0),
+         "print to screen if default, print to file if 1")
+
+        ("print_data",
+         po::value<bool>(&argus.print_data)->default_value(0),
+         "print list of run-times, one for each experiment, WARNING: can exhaust system storage with too much data")
+
         ("range",
          po::value<vector<rocblas_int>>(&range)->multitoken(),
          "Range matrix size testing: BLAS-3 benchmarking only. Accept three positive integers. "
