@@ -381,12 +381,12 @@ class Arguments
     rocblas_int unit_check = 1;
     rocblas_int timing     = 0;
 
-    int num_iters_per_experiment = 1;
-    int num_experiments = 1;
-    int num_iters_before_experiment = 0;
+    int num_iters_per_experiment       = 1;
+    int num_experiments                = 1;
+    int num_iters_before_experiment    = 0;
     int sleep_time_between_experiments = 0;
-    bool to_file = 0;
-    bool print_data = 0;
+    bool to_file                       = 0;
+    bool print_data                    = 0;
 
     Arguments& operator=(const Arguments& rhs)
     {
@@ -423,11 +423,11 @@ class Arguments
         unit_check = rhs.unit_check;
         timing     = rhs.timing;
 
-        num_iters_per_experiment = rhs.num_iters_per_experiment;
-        num_experiments = rhs.num_experiments;
-        num_iters_before_experiment = rhs.num_iters_before_experiment;
+        num_iters_per_experiment       = rhs.num_iters_per_experiment;
+        num_experiments                = rhs.num_experiments;
+        num_iters_before_experiment    = rhs.num_iters_before_experiment;
         sleep_time_between_experiments = rhs.sleep_time_between_experiments;
-        to_file = rhs.to_file;
+        to_file                        = rhs.to_file;
 
         return *this;
     }
