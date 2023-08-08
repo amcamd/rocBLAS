@@ -64,6 +64,9 @@ void testing_trsv_batched_bad_arg(const Arguments& arg)
     device_batch_matrix<T> dA(M, M, lda, batch_count);
     device_batch_vector<T> dx(M, incx, batch_count);
 
+    rocblas_cout << "dA, dx pointers = " << dA.ptr_on_device() << ", " << dx.ptr_on_device()
+                 << std::endl;
+
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());
     CHECK_DEVICE_ALLOCATION(dx.memcheck());

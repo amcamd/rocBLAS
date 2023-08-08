@@ -60,6 +60,7 @@ public:
         , m_inc{inc ? inc : 1}
         , m_data{this->device_vector_setup()}
     {
+        //      rocblas_cout << "m_data = " << m_data;
     }
 
     //!

@@ -68,6 +68,8 @@ void testing_trsv_strided_batched_bad_arg(const Arguments& arg)
     device_strided_batch_matrix<T> dA(M, M, lda, stride_a, batch_count);
     device_strided_batch_vector<T> dx(M, incx, stride_x, batch_count);
 
+    rocblas_cout << "dA, dx pointers = " << dA.data() << ", " << static_cast<T*>(dx) << std::endl;
+
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());
     CHECK_DEVICE_ALLOCATION(dx.memcheck());

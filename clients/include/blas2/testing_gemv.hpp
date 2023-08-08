@@ -87,6 +87,9 @@ void testing_gemv_bad_arg(const Arguments& arg)
         device_vector<T> dx(N, incx);
         device_vector<T> dy(N, incy);
 
+        rocblas_cout << "gemv dA, dx, dy = " << static_cast<T*>(dA) << ", " << static_cast<T*>(dx)
+                     << ", " << static_cast<T*>(dy) << std::endl;
+
         // Check device memory allocation
         CHECK_DEVICE_ALLOCATION(dA.memcheck());
         CHECK_DEVICE_ALLOCATION(dx.memcheck());
@@ -233,6 +236,9 @@ void testing_gemv(const Arguments& arg)
     device_vector<T> dy(dim_y, incy, HMM);
     device_vector<T> d_alpha(1, 1, HMM);
     device_vector<T> d_beta(1, 1, HMM);
+
+    rocblas_cout << "gemv dA, dx, dy = " << static_cast<T*>(dA) << ", " << static_cast<T*>(dx)
+                 << ", " << static_cast<T*>(dy) << std::endl;
 
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());

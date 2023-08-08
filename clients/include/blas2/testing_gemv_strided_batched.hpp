@@ -89,6 +89,9 @@ void testing_gemv_strided_batched_bad_arg(const Arguments& arg)
         device_strided_batch_vector<Ti> dx(N, incx, stride_x, batch_count);
         device_strided_batch_vector<To> dy(M, incy, stride_y, batch_count);
 
+        rocblas_cout << "gemv_strided_batched dA, dx, dy = " << dA.data() << ", "
+                     << static_cast<Ti*>(dx) << ", " << static_cast<To*>(dy) << std::endl;
+
         // Check device memory allocation
         CHECK_DEVICE_ALLOCATION(dA.memcheck());
         CHECK_DEVICE_ALLOCATION(dx.memcheck());
@@ -407,6 +410,9 @@ void testing_gemv_strided_batched(const Arguments& arg)
     device_strided_batch_vector<To> dy(dim_y, incy, stride_y, batch_count);
     device_vector<Tex>              d_alpha(1);
     device_vector<Tex>              d_beta(1);
+
+    rocblas_cout << "gemv_strided_batched dA, dx, dy = " << dA.data() << ", "
+                 << static_cast<Ti*>(dx) << ", " << static_cast<To*>(dy) << std::endl;
 
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());

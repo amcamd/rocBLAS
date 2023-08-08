@@ -138,6 +138,8 @@ void testing_trsv(const Arguments& arg)
     device_matrix<T> dA(M, M, lda);
     device_vector<T> dx_or_b(M, incx);
 
+    //  rocblas_cout << "dx_or_b, dA = " <<  static_cast<T*>( dx_or_b) << ", " << static_cast<T*>(dA) << std::endl ;
+
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());
     CHECK_DEVICE_ALLOCATION(dx_or_b.memcheck());
