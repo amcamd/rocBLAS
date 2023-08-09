@@ -81,12 +81,13 @@ void testing_gemv_batched_bad_arg(const Arguments& arg)
         }
 
         // Allocate device memory
+        rocblas_cout << "dA ";
         device_batch_matrix<Ti> dA(M, N, lda, batch_count);
+        rocblas_cout << "dx ";
         device_batch_vector<Ti> dx(N, incx, batch_count);
+        rocblas_cout << "dy ";
         device_batch_vector<To> dy(N, incx, batch_count);
-
-        rocblas_cout << "gemv_batched dA, dx, dy = " << dA.ptr_on_device() << ", "
-                     << dx.ptr_on_device() << ", " << dy.ptr_on_device() << std::endl;
+        rocblas_cout << std::endl;
 
         // Check device memory allocation
         CHECK_DEVICE_ALLOCATION(dA.memcheck());
@@ -355,14 +356,20 @@ void testing_gemv_batched(const Arguments& arg)
     CHECK_HIP_ERROR(hy_gold.memcheck());
 
     // Allocate device memory
+    rocblas_cout << "dA ";
     device_batch_matrix<Ti> dA(M, N, lda, batch_count);
+    rocblas_cout << "dx ";
     device_batch_vector<Ti> dx(dim_x, incx, batch_count);
+    rocblas_cout << "dy ";
     device_batch_vector<To> dy(dim_y, incy, batch_count);
-    device_vector<Tex>      d_alpha(1);
-    device_vector<Tex>      d_beta(1);
+    rocblas_cout << "d_alpha ";
+    device_vector<Tex> d_alpha(1);
+    rocblas_cout << "d_beta ";
+    device_vector<Tex> d_beta(1);
+    rocblas_cout << std::endl;
 
-    rocblas_cout << "gemv_batched dA, dx, dy = " << dA.ptr_on_device() << ", " << dx.ptr_on_device()
-                 << ", " << dy.ptr_on_device() << std::endl;
+    //  rocblas_cout << "gemv_batched dA, dx, dy = " << dA.ptr_on_device() << ", " << dx.ptr_on_device()
+    //               << ", " << dy.ptr_on_device() << std::endl;
 
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());

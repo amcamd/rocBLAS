@@ -122,6 +122,8 @@ namespace
 
         rocblas_status perf_status = rocblas_status_success;
         auto           w_mem       = handle->device_malloc(dev_bytes);
+        if(dev_bytes != 0)
+            rocblas_cout << "dev_bytes = " << dev_bytes << ", " << (void*)(w_mem) << "  ";
         if(!w_mem)
             perf_status = rocblas_status_perf_degraded;
 

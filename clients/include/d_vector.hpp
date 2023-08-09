@@ -1,5 +1,5 @@
 /* ************************************************************************
- * Copyright (C) 2018-2022 Advanced Micro Devices, Inc. All rights reserved.
+ * Copyright (C) 2018-2023 Advanced Micro Devices, Inc. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -113,6 +113,32 @@ public:
             }
         }
 #endif
+        size_t gb       = m_bytes / 1000000000;
+        size_t mb       = m_bytes / 1000000 - (gb * 1000);
+        size_t kb       = m_bytes / 1000 - (mb * 1000) - (gb * 1000000);
+        size_t bb       = m_bytes - (kb * 1000) - (mb * 1000000) - (gb * 1000000000);
+        float  gb_float = float(gb) + float(mb) / float(1000);
+        float  mb_float = float(mb) + float(kb) / float(1000);
+        float  kb_float = float(kb) + float(bb) / float(1000);
+
+        T* d_end = d + (m_bytes / sizeof(T));
+
+        if(gb > 0)
+        {
+            rocblas_cout << gb_float << " GB " << d << "-" << d_end << " ";
+        }
+        else if(mb > 0)
+        {
+            rocblas_cout << mb_float << " MB " << d << "-" << d_end << " ";
+        }
+        else if(kb > 0)
+        {
+            rocblas_cout << kb_float << " KB " << d << "-" << d_end << " ";
+        }
+        else
+        {
+            rocblas_cout << m_bytes << "  B " << d << "-" << d_end << " ";
+        }
         return d;
     }
 

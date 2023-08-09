@@ -231,14 +231,26 @@ void testing_gemv(const Arguments& arg)
     hbeta[0]  = h_beta;
 
     // Allocate device memory
-    device_matrix<T> dA(M, N, lda, HMM);
-    device_vector<T> dx(dim_x, incx, HMM);
-    device_vector<T> dy(dim_y, incy, HMM);
-    device_vector<T> d_alpha(1, 1, HMM);
-    device_vector<T> d_beta(1, 1, HMM);
+    //  device_matrix<T> dA(M, N, lda, HMM);
+    //  device_vector<T> dx(dim_x, incx, HMM);
+    //  device_vector<T> dy(dim_y, incy, HMM);
+    //  device_vector<T> d_alpha(1, 1, HMM);
+    //  device_vector<T> d_beta(1, 1, HMM);
 
-    rocblas_cout << "gemv dA, dx, dy = " << static_cast<T*>(dA) << ", " << static_cast<T*>(dx)
-                 << ", " << static_cast<T*>(dy) << std::endl;
+    rocblas_cout << "dA ";
+    device_matrix<T> dA(M, N, lda, HMM);
+    rocblas_cout << "dx ";
+    device_vector<T> dx(dim_x, incx, HMM);
+    rocblas_cout << "dy ";
+    device_vector<T> dy(dim_y, incy, HMM);
+    rocblas_cout << "d_alpha ";
+    device_vector<T> d_alpha(1, 1, HMM);
+    rocblas_cout << "d_beta ";
+    device_vector<T> d_beta(1, 1, HMM);
+    rocblas_cout << std::endl;
+
+    //  rocblas_cout << "gemv dA, dx, dy = " << static_cast<T*>(dA) << ", " << static_cast<T*>(dx)
+    //               << ", " << static_cast<T*>(dy) << ", " << static_cast<T*>(d_alpha) << ", " << static_cast<T*>(d_beta) << std::endl;
 
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());
