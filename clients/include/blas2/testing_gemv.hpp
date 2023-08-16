@@ -221,6 +221,7 @@ void testing_gemv(const Arguments& arg)
 
     // Naming: `h` is in CPU (host) memory(eg hA), `d` is in GPU (device) memory (eg dA).
     // Allocate host memory
+    rocblas_cout << "hA ";
     host_matrix<T> hA(M, N, lda);
     host_vector<T> hx(dim_x, incx);
     host_vector<T> hy(dim_y, incy);

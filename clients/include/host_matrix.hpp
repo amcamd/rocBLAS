@@ -1,5 +1,5 @@
 /* ************************************************************************
- * Copyright (C) 2018-2022 Advanced Micro Devices, Inc. All rights reserved.
+ * Copyright (C) 2018-2023 Advanced Micro Devices, Inc. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -47,6 +47,7 @@ struct host_matrix : std::vector<T, host_memory_allocator<T>>
         , m_n(n)
         , m_lda(lda)
     {
+        rocblas_cout << (T*)this->data() << "-" << (T*)this->data() + (n * lda) << std::endl;
     }
 
     //!
