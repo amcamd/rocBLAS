@@ -250,8 +250,8 @@ void testing_gemv(const Arguments& arg)
     device_vector<T> d_beta(1, 1, HMM);
     rocblas_cout << std::endl;
 
-    //  rocblas_cout << "gemv dA, dx, dy = " << static_cast<T*>(dA) << ", " << static_cast<T*>(dx)
-    //               << ", " << static_cast<T*>(dy) << ", " << static_cast<T*>(d_alpha) << ", " << static_cast<T*>(d_beta) << std::endl;
+    rocblas_cout << "hA, hx, hy = " << static_cast<T*>(hA) << ", " << static_cast<T*>(hx) << ", "
+                 << static_cast<T*>(hy) << std::endl;
 
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());

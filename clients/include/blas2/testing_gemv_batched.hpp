@@ -368,8 +368,8 @@ void testing_gemv_batched(const Arguments& arg)
     device_vector<Tex> d_beta(1);
     rocblas_cout << std::endl;
 
-    //  rocblas_cout << "gemv_batched dA, dx, dy = " << dA.ptr_on_device() << ", " << dx.ptr_on_device()
-    //               << ", " << dy.ptr_on_device() << std::endl;
+    //    rocblas_cout << "hA, hx, hy = " << (Ti*)hA << ", "
+    //                 << static_cast<Ti*>(hx) << ", " << static_cast<To*>(hy) << std::endl;
 
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());

@@ -417,8 +417,8 @@ void testing_gemv_strided_batched(const Arguments& arg)
     device_vector<Tex> d_beta(1);
     rocblas_cout << std::endl;
 
-    //  rocblas_cout << "gemv_strided_batched dA, dx, dy = " << dA.data() << ", "
-    //               << static_cast<Ti*>(dx) << ", " << static_cast<To*>(dy) << std::endl;
+    rocblas_cout << "hA, hx, hy = " << (Ti*)hA << ", " << static_cast<Ti*>(hx) << ", "
+                 << static_cast<To*>(hy) << std::endl;
 
     // Check device memory allocation
     CHECK_DEVICE_ALLOCATION(dA.memcheck());
