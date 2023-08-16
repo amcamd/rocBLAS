@@ -181,6 +181,12 @@ public:
     //!
     hipError_t transfer_from(const host_strided_batch_vector<T>& that)
     {
+        T* end_dest = (T*)data() + this->nmemb();
+        T* end_src  = (T*)that.data() + this->nmemb();
+        rocblas_cout << "hipMemcpy(" << this->data() << ", " << that.data() << ", "
+                     << sizeof(T) * this->nmemb() << ", " << this->use_HMM << ") " << end_dest
+                     << ", " << end_src << std::endl;
+
         return hipMemcpy(data(),
                          that.data(),
                          sizeof(T) * this->nmemb(),

@@ -1,5 +1,5 @@
 /* ************************************************************************
- * Copyright (C) 2018-2022 Advanced Micro Devices, Inc. All rights reserved.
+ * Copyright (C) 2018-2023 Advanced Micro Devices, Inc. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -136,6 +136,11 @@ public:
     //!
     hipError_t transfer_from(const host_matrix<T>& that)
     {
+        const T* end_dest = (T*)m_data + this->nmemb();
+        const T* end_src  = (const T*)that + this->nmemb();
+        rocblas_cout << "hipMemcpy(" << m_data << ", " << (const T*)that << ", "
+                     << this->nmemb() * sizeof(T) << ", " << this->use_HMM << ") " << end_dest
+                     << ", " << end_src << std::endl;
         return hipMemcpy(m_data,
                          (const T*)that,
                          this->nmemb() * sizeof(T),

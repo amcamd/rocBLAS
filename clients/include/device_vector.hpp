@@ -127,6 +127,12 @@ public:
     //!
     hipError_t transfer_from(const host_vector<T>& that)
     {
+        const T* end_dest = (T*)m_data + this->nmemb();
+        const T* end_src  = (const T*)that + this->nmemb();
+        rocblas_cout << "hipMemcpy(" << m_data << ", " << (const T*)that << ", "
+                     << this->nmemb() * sizeof(T) << ", " << this->use_HMM << ") " << end_dest
+                     << ", " << end_src << std::endl;
+
         return hipMemcpy(m_data,
                          (const T*)that,
                          this->nmemb() * sizeof(T),

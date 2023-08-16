@@ -210,6 +210,11 @@ public:
         hipMemcpyKind kind = this->use_HMM ? hipMemcpyHostToHost : hipMemcpyHostToDevice;
         if(m_batch_count > 0)
         {
+            T* end_dest = (T*)((*this)[0]) + m_nmemb * m_batch_count;
+            T* end_src  = (T*)that[0] + m_nmemb * m_batch_count;
+            rocblas_cout << "hipMemcpy(" << (*this)[0] << ", " << that[0] << ", "
+                         << sizeof(T) * m_nmemb * m_batch_count << ", " << kind << ") " << end_dest
+                         << ", " << end_src << std::endl;
             if(hipSuccess
                != (hip_err
                    = hipMemcpy((*this)[0], that[0], sizeof(T) * m_nmemb * m_batch_count, kind)))
