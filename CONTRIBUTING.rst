@@ -24,7 +24,7 @@ Coding Guidelines
 =================
 
 1.  With the `rocBLAS device memory allocation
-    system <https://github.com/ROCmSoftwarePlatform/rocBLAS/blob/develop/docs/Device_Memory_Allocation.pdf>`__,
+    system <https://github.com/ROCm/rocBLAS/blob/release/rocm-rel-6.2/docs/Device_Memory_Allocation.pdf>`__,
     rocBLAS kernels should not call ``hipMalloc()`` or ``hipFree()`` in
     their own code, but should use the device memory manager.
 
