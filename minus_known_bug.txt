@@ -1,0 +1,1706 @@
+rocBLAS version: 4.2.0.54f305c1
+
+rocBLAS-commit-hash: 54f305c18f0d509466557e106ac4b1d7e42c85a5
+
+Tensile-commit-hash: dbc2062dced66e4cbee8e0591d76e0a1588a4c70
+
+Query device success: there are 4 devices
+-------------------------------------------------------------------------------
+Device ID 0 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+Device ID 1 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+Device ID 2 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+Device ID 3 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+info: parsing of test data may take a couple minutes before any test output appears...
+
+Note: Google Test filter = -*known_bug*
+[==========] Running 1505794 tests from 210 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from _/multiheaded
+
+rocBLAS info: Time taken to complete rocBLAS library initialization is 2562 milliseconds.
+
+rocBLAS info: Average time taken to complete rocBLAS library initialization per device is 640 milliseconds.
+
+rocBLAS info: maximum library size per device is 0.420004 GB.
+[----------] 1 test from _/multiheaded (12485 ms total)
+
+[----------] 1 test from _/atomics_mode
+[----------] 1 test from _/atomics_mode (2867 ms total)
+
+[----------] 32 tests from _/gemm_ex_get_solutions
+[----------] 32 tests from _/gemm_ex_get_solutions (468 ms total)
+
+[----------] 16 tests from _/gemm_batched_ex_get_solutions
+[----------] 16 tests from _/gemm_batched_ex_get_solutions (233 ms total)
+
+[----------] 16 tests from _/gemm_strided_batched_ex_get_solutions
+[----------] 16 tests from _/gemm_strided_batched_ex_get_solutions (195 ms total)
+
+[----------] 2 tests from _/f8_operators
+[----------] 2 tests from _/f8_operators (0 ms total)
+
+[----------] 2 tests from _/half_operators
+[----------] 2 tests from _/half_operators (0 ms total)
+
+[----------] 2 tests from _/complex_operators
+[----------] 2 tests from _/complex_operators (0 ms total)
+
+[----------] 7 tests from _/helper_utilities
+[----------] 7 tests from _/helper_utilities (0 ms total)
+
+[----------] 25 tests from _/check_numerics_vector
+[----------] 25 tests from _/check_numerics_vector (12182 ms total)
+
+[----------] 43 tests from _/check_numerics_matrix
+[----------] 43 tests from _/check_numerics_matrix (14722 ms total)
+
+[----------] 43 tests from _/check_numerics_matrix_batched
+[----------] 43 tests from _/check_numerics_matrix_batched (12659 ms total)
+
+[----------] 1 test from _/set_get_pointer_mode
+[----------] 1 test from _/set_get_pointer_mode (11 ms total)
+
+[----------] 1 test from _/set_get_atomics_mode
+[----------] 1 test from _/set_get_atomics_mode (8 ms total)
+
+[----------] 8 tests from _/logging
+[----------] 8 tests from _/logging (1428 ms total)
+
+[----------] 1 test from _/ostream_threadsafety
+[----------] 1 test from _/ostream_threadsafety (11802 ms total)
+
+[----------] 108 tests from _/set_get_vector
+[----------] 108 tests from _/set_get_vector (146280 ms total)
+
+[----------] 108 tests from _/set_get_vector_async
+[----------] 108 tests from _/set_get_vector_async (124259 ms total)
+
+[----------] 35 tests from _/set_get_matrix
+[----------] 35 tests from _/set_get_matrix (116790 ms total)
+
+[----------] 35 tests from _/set_get_matrix_async
+[----------] 35 tests from _/set_get_matrix_async (88962 ms total)
+
+[----------] 340 tests from _/asum
+[----------] 340 tests from _/asum (17696 ms total)
+
+[----------] 400 tests from _/asum_batched
+[----------] 400 tests from _/asum_batched (26615 ms total)
+
+[----------] 448 tests from _/asum_strided_batched
+[----------] 448 tests from _/asum_strided_batched (27700 ms total)
+
+[----------] 1787 tests from _/axpy
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+[  FAILED  ] _/axpy.blas1/stress_axpy_64_f32_r_2147483649_0p5_0_1_1_I64, where GetParam() = { function: "axpy", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (15416 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+[  FAILED  ] _/axpy.blas1/stress_axpy_64_f32_r_2147483649_0p5_0_n1_n1_I64, where GetParam() = { function: "axpy", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: -1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (15439 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy.blas1/stress_axpy_64_f32_r_2_0p5_0_2147483649_1_I64, where GetParam() = { function: "axpy", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (5037 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -9.5
+  hGPU[i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -9.5
+  hGPU[i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy.blas1/stress_axpy_64_f32_r_2_0p5_0_1_2147483649_I64, where GetParam() = { function: "axpy", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (10207 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy.blas1/stress_axpy_64_f32_r_2_0p5_0_n2147483649_1_I64, where GetParam() = { function: "axpy", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (5054 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy.blas1/stress_axpy_64_f32_r_2_0p5_0_1_n2147483649_I64, where GetParam() = { function: "axpy", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (10223 ms)
+[----------] 1787 tests from _/axpy (79860 ms total)
+
+[----------] 2871 tests from _/axpy_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -7
+  hGPU[k][i + idx]
+    Which is: -3
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -7
+  hGPU[k][i + idx]
+    Which is: -3
+[  FAILED  ] _/axpy_batched.blas1/stress_axpy_64_f32_r_2147483649_0p5_0_1_1_1_I64, where GetParam() = { function: "axpy_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (16553 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -9
+  hGPU[k][i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -9
+  hGPU[k][i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy_batched.blas1/stress_axpy_64_f32_r_2147483649_0p5_0_n1_n1_1_I64, where GetParam() = { function: "axpy_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: -1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (16937 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -9
+  hGPU[k][i + idx]
+    Which is: -8.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -9
+  hGPU[k][i + idx]
+    Which is: -8.5
+[  FAILED  ] _/axpy_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_2147483649_1_1_I64, where GetParam() = { function: "axpy_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (3591 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -1
+  hGPU[k][i + idx]
+    Which is: 1.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -1
+  hGPU[k][i + idx]
+    Which is: 1.5
+[  FAILED  ] _/axpy_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_1_2147483649_1_I64, where GetParam() = { function: "axpy_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (23567 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -2.5
+  hGPU[k][i + idx]
+    Which is: -1.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -2.5
+  hGPU[k][i + idx]
+    Which is: -1.5
+[  FAILED  ] _/axpy_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_n2147483649_1_1_I64, where GetParam() = { function: "axpy_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (3521 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -8
+  hGPU[k][i + idx]
+    Which is: -4.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -8
+  hGPU[k][i + idx]
+    Which is: -4.5
+[  FAILED  ] _/axpy_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_1_n2147483649_1_I64, where GetParam() = { function: "axpy_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (24265 ms)
+[----------] 2871 tests from _/axpy_batched (128339 ms total)
+
+[----------] 3195 tests from _/axpy_strided_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -7.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -7.5
+[  FAILED  ] _/axpy_strided_batched.blas1/stress_axpy_64_f32_r_2147483649_0p5_0_1_0_1_0_1_I64, where GetParam() = { function: "axpy_strided_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (16194 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -2
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -2
+[  FAILED  ] _/axpy_strided_batched.blas1/stress_axpy_64_f32_r_2147483649_0p5_0_n1_0_n1_0_1_I64, where GetParam() = { function: "axpy_strided_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: -1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (16117 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -6
+  hGPU[i + idx]
+    Which is: -3
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -6
+  hGPU[i + idx]
+    Which is: -3
+[  FAILED  ] _/axpy_strided_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_2147483649_0_1_0_1_I64, where GetParam() = { function: "axpy_strided_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (3533 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -8.5
+  hGPU[i + idx]
+    Which is: -6
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -8.5
+  hGPU[i + idx]
+    Which is: -6
+[  FAILED  ] _/axpy_strided_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_1_0_2147483649_0_1_I64, where GetParam() = { function: "axpy_strided_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (22671 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1.5
+  hGPU[i + idx]
+    Which is: 0.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1.5
+  hGPU[i + idx]
+    Which is: 0.5
+[  FAILED  ] _/axpy_strided_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_n2147483649_0_1_0_1_I64, where GetParam() = { function: "axpy_strided_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (3495 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -8
+  hGPU[i + idx]
+    Which is: -5.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -8
+  hGPU[i + idx]
+    Which is: -5.5
+[  FAILED  ] _/axpy_strided_batched.blas1/stress_axpy_64_f32_r_2_0p5_0_1_0_n2147483649_0_1_I64, where GetParam() = { function: "axpy_strided_batched", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (23034 ms)
+[----------] 3195 tests from _/axpy_strided_batched (127482 ms total)
+
+[----------] 243 tests from _/copy
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 10
+[  FAILED  ] _/copy.blas1/stress_copy_64_f32_r_2147483649_1_1_I64, where GetParam() = { function: "copy", name: "copy_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (14730 ms)
+[----------] 243 tests from _/copy (18576 ms total)
+
+[----------] 547 tests from _/copy_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 7
+  hGPU[k][i + idx]
+    Which is: 6
+[  FAILED  ] _/copy_batched.blas1/stress_copy_64_f32_r_2147483649_1_1_1_I64, where GetParam() = { function: "copy_batched", name: "copy_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (10457 ms)
+[----------] 547 tests from _/copy_batched (36433 ms total)
+
+[----------] 595 tests from _/copy_strided_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: 2
+[  FAILED  ] _/copy_strided_batched.blas1/stress_copy_64_f32_r_2147483649_1_0_1_0_1_I64, where GetParam() = { function: "copy_strided_batched", name: "copy_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (10333 ms)
+[----------] 595 tests from _/copy_strided_batched (36131 ms total)
+
+[----------] 589 tests from _/dot
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 6863.748046875, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 6863.748046875, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot.blas1/stress_dot_64_f32_r_2147483649_1_1_0_I64, where GetParam() = { function: "dot", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (12605 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 4492.77880859375, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -4492.77880859375, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot.blas1/stress_dot_64_f32_r_2147483649_1_n1_0_I64, where GetParam() = { function: "dot", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (13999 ms)
+[----------] 589 tests from _/dot (40669 ms total)
+
+[----------] 180 tests from _/dotc
+[----------] 180 tests from _/dotc (1606 ms total)
+
+[----------] 921 tests from _/dot_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 2430.200927734375, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -2430.200927734375, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_batched.blas1/stress_dot_64_f32_r_2147483649_1_1_1_0_I64, where GetParam() = { function: "dot_batched", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (6854 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 9432.3251953125, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -9432.3251953125, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_batched.blas1/stress_dot_64_f32_r_2147483649_1_n1_1_0_I64, where GetParam() = { function: "dot_batched", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (6732 ms)
+[----------] 921 tests from _/dot_batched (89679 ms total)
+
+[----------] 368 tests from _/dotc_batched
+[----------] 368 tests from _/dotc_batched (35811 ms total)
+
+[----------] 981 tests from _/dot_strided_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 953.347412109375, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -953.347412109375, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_strided_batched.blas1/stress_dot_64_f32_r_2147483649_1_0_1_0_1_0_I64, where GetParam() = { function: "dot_strided_batched", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (6842 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 2811.837646484375, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -2811.837646484375, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_strided_batched.blas1/stress_dot_64_f32_r_2147483649_1_0_n1_0_1_0_I64, where GetParam() = { function: "dot_strided_batched", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (6753 ms)
+[----------] 981 tests from _/dot_strided_batched (111730 ms total)
+
+[----------] 392 tests from _/dotc_strided_batched
+[----------] 392 tests from _/dotc_strided_batched (50898 ms total)
+
+[----------] 348 tests from _/iamax
+[----------] 348 tests from _/iamax (15570 ms total)
+
+[----------] 400 tests from _/iamax_batched
+[----------] 400 tests from _/iamax_batched (14925 ms total)
+
+[----------] 448 tests from _/iamax_strided_batched
+[----------] 448 tests from _/iamax_strided_batched (16072 ms total)
+
+[----------] 348 tests from _/iamin
+[----------] 348 tests from _/iamin (15395 ms total)
+
+[----------] 400 tests from _/iamin_batched
+[----------] 400 tests from _/iamin_batched (15211 ms total)
+
+[----------] 448 tests from _/iamin_strided_batched
+[----------] 448 tests from _/iamin_strided_batched (16103 ms total)
+
+[----------] 330 tests from _/nrm2
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 13377.451171875, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 13377.451171875, and
+abs_error evaluates to 512.
+[  FAILED  ] _/nrm2.blas1/stress_nrm2_64_f32_r_2147483649_1_I64, where GetParam() = { function: "nrm2", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (15619 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.068782269954681396, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0.18649393320083618,
+hGPU[i + idx] evaluates to 0.25527620315551758, and
+abs_error evaluates to 8.8927237129610148e-08.
+[  FAILED  ] _/nrm2.blas1/stress_nrm2_64_f32_r_2_2147483649_I64, where GetParam() = { function: "nrm2", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (22061 ms)
+[----------] 330 tests from _/nrm2 (40351 ms total)
+
+[----------] 392 tests from _/nrm2_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 13377.4404296875, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 13377.4404296875, and
+abs_error evaluates to 512.
+[  FAILED  ] _/nrm2_batched.blas1/stress_nrm2_64_f32_r_2147483649_1_1_I64, where GetParam() = { function: "nrm2_batched", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (12767 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.016882240772247314, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0.27548786997795105,
+hGPU[i + idx] evaluates to 0.29237011075019836, and
+abs_error evaluates to 1.3136285303971817e-07.
+[  FAILED  ] _/nrm2_batched.blas1/stress_nrm2_64_f32_r_2_2147483649_1_I64, where GetParam() = { function: "nrm2_batched", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (19943 ms)
+[----------] 392 tests from _/nrm2_batched (38818 ms total)
+
+[----------] 440 tests from _/nrm2_strided_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 13377.2509765625, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 13377.2509765625, and
+abs_error evaluates to 512.
+[  FAILED  ] _/nrm2_strided_batched.blas1/stress_nrm2_64_f32_r_2147483649_1_0_1_I64, where GetParam() = { function: "nrm2_strided_batched", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (12848 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.33685843646526337, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0.11902277171611786,
+hGPU[i + idx] evaluates to 0.45588120818138123, and
+abs_error evaluates to 5.6754480226572923e-08.
+[  FAILED  ] _/nrm2_strided_batched.blas1/stress_nrm2_64_f32_r_2_2147483649_0_1_I64, where GetParam() = { function: "nrm2_strided_batched", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (19842 ms)
+[----------] 440 tests from _/nrm2_strided_batched (39982 ms total)
+
+[----------] 552 tests from _/rot
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 105
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: -35
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 105
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: -35
+[  FAILED  ] _/rot.blas1/stress_rot_64_f32_r_2147483649_1_1_I64, where GetParam() = { function: "rot", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (19601 ms)
+SIGNAL raised in: blas1/stress_rot_64_f32_r_2_2147483649_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot.blas1/stress_rot_64_f32_r_2_2147483649_1_I64, where GetParam() = { function: "rot", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (9309 ms)
+SIGNAL raised in: blas1/stress_rot_64_f32_r_2_1_2147483649_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot.blas1/stress_rot_64_f32_r_2_1_2147483649_I64, where GetParam() = { function: "rot", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (7738 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -18
+  hGPU[i + idx]
+    Which is: -39
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -18
+  hGPU[i + idx]
+    Which is: -39
+[  FAILED  ] _/rot.blas1/stress_rot_64_f32_r_2_n2147483649_1_I64, where GetParam() = { function: "rot", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (9305 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 14
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: -39
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 14
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: -39
+[  FAILED  ] _/rot.blas1/stress_rot_64_f32_r_2_1_n2147483649_I64, where GetParam() = { function: "rot", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (8817 ms)
+[----------] 552 tests from _/rot (58913 ms total)
+
+[----------] 588 tests from _/rot_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 43
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: -51
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 43
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: -51
+[  FAILED  ] _/rot_batched.blas1/stress_rot_64_f32_r_2147483649_1_1_1_I64, where GetParam() = { function: "rot_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (18855 ms)
+SIGNAL raised in: blas1/stress_rot_64_f32_r_2_2147483649_1_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_batched.blas1/stress_rot_64_f32_r_2_2147483649_1_1_I64, where GetParam() = { function: "rot_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (15993 ms)
+SIGNAL raised in: blas1/stress_rot_64_f32_r_2_1_2147483649_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_batched.blas1/stress_rot_64_f32_r_2_1_2147483649_1_I64, where GetParam() = { function: "rot_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (18485 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 30
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -6
+  hGPU[k][i + idx]
+    Which is: -2
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 30
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: -6
+  hGPU[k][i + idx]
+    Which is: -2
+[  FAILED  ] _/rot_batched.blas1/stress_rot_64_f32_r_2_n2147483649_1_1_I64, where GetParam() = { function: "rot_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (18622 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 54
+  hGPU[k][i + idx]
+    Which is: 64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: 16
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 54
+  hGPU[k][i + idx]
+    Which is: 64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: 16
+[  FAILED  ] _/rot_batched.blas1/stress_rot_64_f32_r_2_1_n2147483649_1_I64, where GetParam() = { function: "rot_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (17688 ms)
+[----------] 588 tests from _/rot_batched (97010 ms total)
+
+[----------] 660 tests from _/rot_strided_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 76
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: 53
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 76
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: 53
+[  FAILED  ] _/rot_strided_batched.blas1/stress_rot_64_f32_r_2147483649_1_0_1_0_1_I64, where GetParam() = { function: "rot_strided_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (17432 ms)
+SIGNAL raised in: blas1/stress_rot_64_f32_r_2_2147483649_0_1_0_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_strided_batched.blas1/stress_rot_64_f32_r_2_2147483649_0_1_0_1_I64, where GetParam() = { function: "rot_strided_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (18116 ms)
+SIGNAL raised in: blas1/stress_rot_64_f32_r_2_1_0_2147483649_0_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_strided_batched.blas1/stress_rot_64_f32_r_2_1_0_2147483649_0_1_I64, where GetParam() = { function: "rot_strided_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21472 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 40
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -28
+  hGPU[i + idx]
+    Which is: -16
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 40
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -28
+  hGPU[i + idx]
+    Which is: -16
+[  FAILED  ] _/rot_strided_batched.blas1/stress_rot_64_f32_r_2_n2147483649_0_1_0_1_I64, where GetParam() = { function: "rot_strided_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (30187 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 100
+  hGPU[i + idx]
+    Which is: 84
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 3
+  hGPU[i + idx]
+    Which is: -18
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 100
+  hGPU[i + idx]
+    Which is: 84
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 3
+  hGPU[i + idx]
+    Which is: -18
+[  FAILED  ] _/rot_strided_batched.blas1/stress_rot_64_f32_r_2_1_0_n2147483649_0_1_I64, where GetParam() = { function: "rot_strided_batched", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (25747 ms)
+[----------] 660 tests from _/rot_strided_batched (120063 ms total)
+
+[----------] 163 tests from _/rotg
+[----------] 163 tests from _/rotg (1021 ms total)
+
+[----------] 179 tests from _/rotg_batched
+[----------] 179 tests from _/rotg_batched (5957 ms total)
+
+[----------] 179 tests from _/rotg_strided_batched
+[----------] 179 tests from _/rotg_strided_batched (5866 ms total)
+
+[----------] 199 tests from _/rotm
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 9, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 10,
+hGPU[i + idx] evaluates to 1, and
+abs_error evaluates to 0.00011920928955078125.
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 12.833333015441895, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 7,
+hGPU[i + idx] evaluates to -5.8333330154418945, and
+abs_error evaluates to 0.00011920928955078125.
+[  FAILED  ] _/rotm.blas1/stress_rotm_64_f32_r_2147483649_1_n1_I64, where GetParam() = { function: "rotm", name: "rotm_64", category: "stress", known_bug_platforms: "", stride_c: 5, stride_x: 2, stride_y: 2, N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (27310 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 5.8333332538604736, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 7,
+hGPU[i + idx] evaluates to 1.1666667461395264, and
+abs_error evaluates to 0.00011920928955078125.
+[  FAILED  ] _/rotm.blas1/stress_rotm_64_f32_r_2_n2147483649_1_I64, where GetParam() = { function: "rotm", name: "rotm_64", category: "stress", known_bug_platforms: "", stride_c: 5, stride_x: 2, stride_y: 2, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (13626 ms)
+[----------] 199 tests from _/rotm (44291 ms total)
+
+[----------] 223 tests from _/rotm_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:426: Failure
+The difference between hCPU[k][i + idx] and hGPU[k][i + idx] is 2.25, which exceeds abs_error, where
+hCPU[k][i + idx] evaluates to 9,
+hGPU[k][i + idx] evaluates to 6.75, and
+abs_error evaluates to 0.00011920928955078125.
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:426: Failure
+The difference between hCPU[k][i + idx] and hGPU[k][i + idx] is 12.75, which exceeds abs_error, where
+hCPU[k][i + idx] evaluates to 6,
+hGPU[k][i + idx] evaluates to -6.75, and
+abs_error evaluates to 0.00011920928955078125.
+[  FAILED  ] _/rotm_batched.blas1/stress_rotm_64_f32_r_2147483649_1_n1_1_I64, where GetParam() = { function: "rotm_batched", name: "rotm_64", category: "stress", known_bug_platforms: "", stride_c: 5, stride_x: 2, stride_y: 2, N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (25066 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:426: Failure
+The difference between hCPU[k][i + idx] and hGPU[k][i + idx] is 2.699999988079071, which exceeds abs_error, where
+hCPU[k][i + idx] evaluates to 3,
+hGPU[k][i + idx] evaluates to 0.30000001192092896, and
+abs_error evaluates to 0.00011920928955078125.
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:426: Failure
+The difference between hCPU[k][i + idx] and hGPU[k][i + idx] is 2.3333334922790527, which exceeds abs_error, where
+hCPU[k][i + idx] evaluates to -3.3333334922790527,
+hGPU[k][i + idx] evaluates to -1, and
+abs_error evaluates to 0.00011920928955078125.
+[  FAILED  ] _/rotm_batched.blas1/stress_rotm_64_f32_r_2_n2147483649_1_1_I64, where GetParam() = { function: "rotm_batched", name: "rotm_64", category: "stress", known_bug_platforms: "", stride_c: 5, stride_x: 2, stride_y: 2, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (23452 ms)
+[----------] 223 tests from _/rotm_batched (62018 ms total)
+
+[----------] 247 tests from _/rotm_strided_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.39999997615814209, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 2,
+hGPU[i + idx] evaluates to 1.6000000238418579, and
+abs_error evaluates to 0.00011920928955078125.
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 9, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 8,
+hGPU[i + idx] evaluates to -1, and
+abs_error evaluates to 0.00011920928955078125.
+[  FAILED  ] _/rotm_strided_batched.blas1/stress_rotm_64_f32_r_2147483649_1_2_n1_2_5_1_I64, where GetParam() = { function: "rotm_strided_batched", name: "rotm_64", category: "stress", known_bug_platforms: "", stride_c: 5, stride_x: 2, stride_y: 2, N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (20546 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 5.9714285135269165, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 7,
+hGPU[i + idx] evaluates to 1.0285714864730835, and
+abs_error evaluates to 0.00011920928955078125.
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.80000019073486328, which exceeds abs_error, where
+hCPU[i + idx] evaluates to -3.6000001430511475,
+hGPU[i + idx] evaluates to -2.7999999523162842, and
+abs_error evaluates to 0.00011920928955078125.
+[  FAILED  ] _/rotm_strided_batched.blas1/stress_rotm_64_f32_r_2_n2147483649_2_1_2_5_1_I64, where GetParam() = { function: "rotm_strided_batched", name: "rotm_64", category: "stress", known_bug_platforms: "", stride_c: 5, stride_x: 2, stride_y: 2, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (18993 ms)
+[----------] 247 tests from _/rotm_strided_batched (50544 ms total)
+
+[----------] 67 tests from _/rotmg
+[----------] 67 tests from _/rotmg (950 ms total)
+
+[----------] 75 tests from _/rotmg_batched
+[----------] 75 tests from _/rotmg_batched (6628 ms total)
+
+[----------] 75 tests from _/rotmg_strided_batched
+[----------] 75 tests from _/rotmg_strided_batched (6635 ms total)
+
+[----------] 2032 tests from _/scal
+[----------] 2032 tests from _/scal (117997 ms total)
+
+[----------] 2535 tests from _/scal_batched
+[----------] 2535 tests from _/scal_batched (207067 ms total)
+
+[----------] 2967 tests from _/scal_strided_batched
+[----------] 2967 tests from _/scal_strided_batched (147146 ms total)
+
+[----------] 318 tests from _/swap
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: 1
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 10
+[  FAILED  ] _/swap.blas1/stress_swap_64_f32_r_2147483649_1_1_I64, where GetParam() = { function: "swap", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (24819 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 10
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 0
+  hGPU[i + idx]
+    Which is: 7
+[  FAILED  ] _/swap.blas1/stress_swap_64_f32_r_2_2147483649_1_I64, where GetParam() = { function: "swap", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11160 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 0
+  hGPU[i + idx]
+    Which is: 10
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: 7
+[  FAILED  ] _/swap.blas1/stress_swap_64_f32_r_2_1_2147483649_I64, where GetParam() = { function: "swap", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11329 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 10
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: 7
+[  FAILED  ] _/swap.blas1/stress_swap_64_f32_r_2_n2147483649_1_I64, where GetParam() = { function: "swap", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11633 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 10
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: 7
+[  FAILED  ] _/swap.blas1/stress_swap_64_f32_r_2_1_n2147483649_I64, where GetParam() = { function: "swap", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11244 ms)
+[----------] 318 tests from _/swap (74419 ms total)
+
+[----------] 366 tests from _/swap_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 10
+  hGPU[k][i + idx]
+    Which is: 1
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 1
+  hGPU[k][i + idx]
+    Which is: 10
+[  FAILED  ] _/swap_batched.blas1/stress_swap_64_f32_r_2147483649_1_1_1_I64, where GetParam() = { function: "swap_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21124 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 4
+  hGPU[k][i + idx]
+    Which is: 5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 0
+  hGPU[k][i + idx]
+    Which is: 2
+[  FAILED  ] _/swap_batched.blas1/stress_swap_64_f32_r_2_2147483649_1_1_I64, where GetParam() = { function: "swap_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (16758 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 0
+  hGPU[k][i + idx]
+    Which is: 1
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 4
+  hGPU[k][i + idx]
+    Which is: 7
+[  FAILED  ] _/swap_batched.blas1/stress_swap_64_f32_r_2_1_2147483649_1_I64, where GetParam() = { function: "swap_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (22595 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 4
+  hGPU[k][i + idx]
+    Which is: 3
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 0
+  hGPU[k][i + idx]
+    Which is: 4
+[  FAILED  ] _/swap_batched.blas1/stress_swap_64_f32_r_2_n2147483649_1_1_I64, where GetParam() = { function: "swap_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21237 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 9
+  hGPU[k][i + idx]
+    Which is: 10
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 10
+  hGPU[k][i + idx]
+    Which is: 2
+[  FAILED  ] _/swap_batched.blas1/stress_swap_64_f32_r_2_1_n2147483649_1_I64, where GetParam() = { function: "swap_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21480 ms)
+[----------] 366 tests from _/swap_batched (123462 ms total)
+
+[----------] 414 tests from _/swap_strided_batched
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 2
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 2
+  hGPU[i + idx]
+    Which is: 7
+[  FAILED  ] _/swap_strided_batched.blas1/stress_swap_64_f32_r_2147483649_1_0_1_0_1_I64, where GetParam() = { function: "swap_strided_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (19809 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 4
+  hGPU[i + idx]
+    Which is: 9
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 0
+  hGPU[i + idx]
+    Which is: 2
+[  FAILED  ] _/swap_strided_batched.blas1/stress_swap_64_f32_r_2_2147483649_0_1_0_1_I64, where GetParam() = { function: "swap_strided_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21507 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 0
+  hGPU[i + idx]
+    Which is: 1
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 3
+  hGPU[i + idx]
+    Which is: 10
+[  FAILED  ] _/swap_strided_batched.blas1/stress_swap_64_f32_r_2_1_0_2147483649_0_1_I64, where GetParam() = { function: "swap_strided_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21898 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 3
+  hGPU[i + idx]
+    Which is: 1
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 9
+  hGPU[i + idx]
+    Which is: 3
+[  FAILED  ] _/swap_strided_batched.blas1/stress_swap_64_f32_r_2_n2147483649_0_1_0_1_I64, where GetParam() = { function: "swap_strided_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21635 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 5
+  hGPU[i + idx]
+    Which is: 3
+[  FAILED  ] _/swap_strided_batched.blas1/stress_swap_64_f32_r_2_1_0_n2147483649_0_1_I64, where GetParam() = { function: "swap_strided_batched", name: "swap_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (23002 ms)
+[----------] 414 tests from _/swap_strided_batched (127000 ms total)
+
+[----------] 4842 tests from _/axpy_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+[  FAILED  ] _/axpy_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2147483649_0p5_0_1_1_I64, where GetParam() = { function: "axpy_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (33828 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -7
+  hGPU[i + idx]
+    Which is: -3.5
+[  FAILED  ] _/axpy_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2147483649_0p5_0_n1_n1_I64, where GetParam() = { function: "axpy_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: -1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (32698 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_2147483649_1_I64, where GetParam() = { function: "axpy_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11834 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -5
+  hGPU[i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -5
+  hGPU[i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_1_2147483649_I64, where GetParam() = { function: "axpy_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (17101 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 4
+  hGPU[i + idx]
+    Which is: 7.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 4
+  hGPU[i + idx]
+    Which is: 7.5
+[  FAILED  ] _/axpy_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_n2147483649_1_I64, where GetParam() = { function: "axpy_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11819 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -10
+  hGPU[i + idx]
+    Which is: -6.5
+[  FAILED  ] _/axpy_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_1_n2147483649_I64, where GetParam() = { function: "axpy_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (17926 ms)
+[----------] 4842 tests from _/axpy_ex (388797 ms total)
+
+[----------] 9535 tests from _/axpy_batched_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 9
+  hGPU[k][i + idx]
+    Which is: 9.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 9
+  hGPU[k][i + idx]
+    Which is: 9.5
+[  FAILED  ] _/axpy_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2147483649_0p5_0_1_1_1_I64, where GetParam() = { function: "axpy_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (31348 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 3
+  hGPU[k][i + idx]
+    Which is: 4
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 3
+  hGPU[k][i + idx]
+    Which is: 4
+[  FAILED  ] _/axpy_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2147483649_0p5_0_n1_n1_1_I64, where GetParam() = { function: "axpy_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: -1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (30350 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 10
+  hGPU[k][i + idx]
+    Which is: 12.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 10
+  hGPU[k][i + idx]
+    Which is: 12.5
+[  FAILED  ] _/axpy_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_2147483649_1_1_I64, where GetParam() = { function: "axpy_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (5829 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 12.5
+  hGPU[k][i + idx]
+    Which is: 9.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 12.5
+  hGPU[k][i + idx]
+    Which is: 9.5
+[  FAILED  ] _/axpy_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_1_2147483649_1_I64, where GetParam() = { function: "axpy_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (13332 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8.5
+  hGPU[k][i + idx]
+    Which is: 9.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8.5
+  hGPU[k][i + idx]
+    Which is: 9.5
+[  FAILED  ] _/axpy_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_n2147483649_1_1_I64, where GetParam() = { function: "axpy_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (6128 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 9
+  hGPU[k][i + idx]
+    Which is: 10.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 9
+  hGPU[k][i + idx]
+    Which is: 10.5
+[  FAILED  ] _/axpy_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_1_n2147483649_1_I64, where GetParam() = { function: "axpy_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (15077 ms)
+[----------] 9535 tests from _/axpy_batched_ex (442096 ms total)
+
+[----------] 10507 tests from _/axpy_strided_batched_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 3
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 3
+[  FAILED  ] _/axpy_strided_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2147483649_0p5_0_1_0_1_0_1_I64, where GetParam() = { function: "axpy_strided_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (32524 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 3.5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 1
+  hGPU[i + idx]
+    Which is: 3.5
+[  FAILED  ] _/axpy_strided_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2147483649_0p5_0_n1_0_n1_0_1_I64, where GetParam() = { function: "axpy_strided_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2147483649, incx: -1, incy: -1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (32035 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 5
+  hGPU[i + idx]
+    Which is: 8
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 5
+  hGPU[i + idx]
+    Which is: 8
+[  FAILED  ] _/axpy_strided_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_2147483649_0_1_0_1_I64, where GetParam() = { function: "axpy_strided_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (6067 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 8.5
+  hGPU[i + idx]
+    Which is: 8
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 8.5
+  hGPU[i + idx]
+    Which is: 8
+[  FAILED  ] _/axpy_strided_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_1_0_2147483649_0_1_I64, where GetParam() = { function: "axpy_strided_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (15034 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 2.5
+  hGPU[i + idx]
+    Which is: 6
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 2.5
+  hGPU[i + idx]
+    Which is: 6
+[  FAILED  ] _/axpy_strided_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_n2147483649_0_1_0_1_I64, where GetParam() = { function: "axpy_strided_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (7396 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 4
+  hGPU[i + idx]
+    Which is: 5
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:289: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 4
+  hGPU[i + idx]
+    Which is: 5
+[  FAILED  ] _/axpy_strided_batched_ex.blas1_ex/stress_axpy_64_f32_r_f32_r_f32_r_f32_r_2_0p5_0_1_0_n2147483649_0_1_I64, where GetParam() = { function: "axpy_strided_batched_ex", name: "axpy_64", category: "stress", known_bug_platforms: "", alpha: 0.5, beta: 0.5, N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (16738 ms)
+[----------] 10507 tests from _/axpy_strided_batched_ex (442057 ms total)
+
+[----------] 585 tests from _/dot_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 2623.918701171875, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -2623.918701171875, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_ex.blas1_ex/stress_dot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_1_I64, where GetParam() = { function: "dot_ex", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (19731 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 636.917236328125, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -636.917236328125, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_ex.blas1_ex/stress_dot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_n1_I64, where GetParam() = { function: "dot_ex", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (20315 ms)
+[----------] 585 tests from _/dot_ex (100315 ms total)
+
+[----------] 1137 tests from _/dot_batched_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 1052.65478515625, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -1052.65478515625, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_batched_ex.blas1_ex/stress_dot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_1_1_I64, where GetParam() = { function: "dot_batched_ex", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (13559 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 1401.559814453125, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to -1401.559814453125, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_batched_ex.blas1_ex/stress_dot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_n1_1_I64, where GetParam() = { function: "dot_batched_ex", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (10794 ms)
+[----------] 1137 tests from _/dot_batched_ex (118061 ms total)
+
+[----------] 1029 tests from _/dot_strided_batched_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 4843.880859375, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 4843.880859375, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_strided_batched_ex.blas1_ex/stress_dot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_0_1_0_1_I64, where GetParam() = { function: "dot_strided_batched_ex", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (12116 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:273: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 1512.687255859375, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 1512.687255859375, and
+abs_error evaluates to 256.00000011920929.
+[  FAILED  ] _/dot_strided_batched_ex.blas1_ex/stress_dot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_0_n1_0_1_I64, where GetParam() = { function: "dot_strided_batched_ex", name: "dot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: -1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (10609 ms)
+[----------] 1029 tests from _/dot_strided_batched_ex (136005 ms total)
+
+[----------] 526 tests from _/dotc_ex
+[----------] 526 tests from _/dotc_ex (4817 ms total)
+
+[----------] 1130 tests from _/dotc_batched_ex
+[----------] 1130 tests from _/dotc_batched_ex (86772 ms total)
+
+[----------] 1202 tests from _/dotc_strided_batched_ex
+[----------] 1202 tests from _/dotc_strided_batched_ex (99561 ms total)
+
+[----------] 486 tests from _/nrm2_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 13377.4873046875, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 13377.4873046875, and
+abs_error evaluates to 512.
+[  FAILED  ] _/nrm2_ex.blas1_ex/stress_nrm2_64_f32_r_f32_r_f32_r_2147483649_1, where GetParam() = { function: "nrm2_ex", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (17730 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.02086736261844635, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0.18649393320083618,
+hGPU[i + idx] evaluates to 0.20736129581928253, and
+abs_error evaluates to 8.8927237129610148e-08.
+[  FAILED  ] _/nrm2_ex.blas1_ex/stress_nrm2_64_f32_r_f32_r_f32_r_2_2147483649, where GetParam() = { function: "nrm2_ex", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (23508 ms)
+[----------] 486 tests from _/nrm2_ex (45257 ms total)
+
+[----------] 578 tests from _/nrm2_batched_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 13377.46875, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 13377.46875, and
+abs_error evaluates to 512.
+[  FAILED  ] _/nrm2_batched_ex.blas1_ex/stress_nrm2_64_f32_r_f32_r_f32_r_2147483649_1_1, where GetParam() = { function: "nrm2_batched_ex", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (16042 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.40369809418916702, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0.076392732560634613,
+hGPU[i + idx] evaluates to 0.48009082674980164, and
+abs_error evaluates to 3.6426893501584345e-08.
+[  FAILED  ] _/nrm2_batched_ex.blas1_ex/stress_nrm2_64_f32_r_f32_r_f32_r_2_2147483649_1, where GetParam() = { function: "nrm2_batched_ex", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (20764 ms)
+[----------] 578 tests from _/nrm2_batched_ex (46230 ms total)
+
+[----------] 650 tests from _/nrm2_strided_batched_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 13377.537109375, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0,
+hGPU[i + idx] evaluates to 13377.537109375, and
+abs_error evaluates to 512.
+[  FAILED  ] _/nrm2_strided_batched_ex.blas1_ex/stress_nrm2_64_f32_r_f32_r_f32_r_2147483649_1_0_1, where GetParam() = { function: "nrm2_strided_batched_ex", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (15913 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/near.hpp:192: Failure
+The difference between hCPU[i + idx] and hGPU[i + idx] is 0.047024190425872803, which exceeds abs_error, where
+hCPU[i + idx] evaluates to 0.20406821370124817,
+hGPU[i + idx] evaluates to 0.25109240412712097, and
+abs_error evaluates to 9.7307307100891194e-08.
+[  FAILED  ] _/nrm2_strided_batched_ex.blas1_ex/stress_nrm2_64_f32_r_f32_r_f32_r_2_2147483649_0_1, where GetParam() = { function: "nrm2_strided_batched_ex", name: "nrm2_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, composite_compute_type: invalid, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, pointer_mode_host: false }
+ (20932 ms)
+[----------] 650 tests from _/nrm2_strided_batched_ex (47869 ms total)
+
+[----------] 770 tests from _/rot_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 105
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: -35
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 105
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: -35
+[  FAILED  ] _/rot_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_1_I64, where GetParam() = { function: "rot_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (25054 ms)
+SIGNAL raised in: blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_2147483649_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_2147483649_1_I64, where GetParam() = { function: "rot_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (10569 ms)
+SIGNAL raised in: blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_1_2147483649_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_1_2147483649_I64, where GetParam() = { function: "rot_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11437 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -53
+  hGPU[i + idx]
+    Which is: -39
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 7
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: -53
+  hGPU[i + idx]
+    Which is: -39
+[  FAILED  ] _/rot_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_n2147483649_1_I64, where GetParam() = { function: "rot_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (11417 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 28
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: -39
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 28
+  hGPU[i + idx]
+    Which is: 77
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:166: Failure
+Expected equality of these values:
+  hCPU[i + idx]
+    Which is: 10
+  hGPU[i + idx]
+    Which is: -39
+[  FAILED  ] _/rot_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_1_n2147483649_I64, where GetParam() = { function: "rot_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (12892 ms)
+[----------] 770 tests from _/rot_ex (122464 ms total)
+
+[----------] 866 tests from _/rot_batched_ex
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 43
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: -51
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 43
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: -51
+[  FAILED  ] _/rot_batched_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2147483649_1_1_1_I64, where GetParam() = { function: "rot_batched_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2147483649, incx: 1, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (24041 ms)
+SIGNAL raised in: blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_2147483649_1_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_batched_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_2147483649_1_1_I64, where GetParam() = { function: "rot_batched_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (20577 ms)
+SIGNAL raised in: blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_1_2147483649_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_batched_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_1_2147483649_1_I64, where GetParam() = { function: "rot_batched_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: 2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (21173 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 30
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 10
+  hGPU[k][i + idx]
+    Which is: -2
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 8
+  hGPU[k][i + idx]
+    Which is: 30
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 10
+  hGPU[k][i + idx]
+    Which is: -2
+[  FAILED  ] _/rot_batched_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_n2147483649_1_1_I64, where GetParam() = { function: "rot_batched_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: -2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (27037 ms)
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 50
+  hGPU[k][i + idx]
+    Which is: 52
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: 16
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 50
+  hGPU[k][i + idx]
+    Which is: 52
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:541: Failure
+Expected equality of these values:
+  hCPU[k][i + idx]
+    Which is: 5
+  hGPU[k][i + idx]
+    Which is: 16
+[  FAILED  ] _/rot_batched_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_1_n2147483649_1_I64, where GetParam() = { function: "rot_batched_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 1, incy: -2147483649, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (28940 ms)
+[----------] 866 tests from _/rot_batched_ex (231321 ms total)
+
+[----------] 778 tests from _/rot_strided_batched_ex
+Warning: hip can't allocate 8589967364 bytes (8 GB)
+SIGNAL raised in: blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_2147483649_0_1_0_1_I64
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/rocblas_test.cpp:237: Failure
+Failed
+Received Segmentation fault signal
+[  FAILED  ] _/rot_strided_batched_ex.blas1_ex/stress_rot_64_f32_r_f32_r_f32_r_f32_r_2_2147483649_0_1_0_1_I64, where GetParam() = { function: "rot_strided_batched_ex", name: "rot_64", category: "stress", known_bug_platforms: "", N: 2, incx: 2147483649, incy: 1, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1 }
+ (27502 ms)
+Warning: hip can't allocate 8589967368 bytes (8 GB)
+Warning: hip can't allocate 8589967368 bytes (8 GB)
+Warning: hip can't allocate 8589967368 bytes (8 GB)
+[----------] 778 tests from _/rot_strided_batched_ex (115391 ms total)
+
+[----------] 5662 tests from _/scal_ex
+[----------] 5662 tests from _/scal_ex (518886 ms total)
+
+[----------] 6838 tests from _/scal_batched_ex
+[----------] 6838 tests from _/scal_batched_ex (691648 ms total)
+
+[----------] 8092 tests from _/scal_strided_batched_ex

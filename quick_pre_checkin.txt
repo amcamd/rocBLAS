@@ -1,0 +1,737 @@
+rocBLAS version: 4.2.0.54f305c1
+
+rocBLAS-commit-hash: 54f305c18f0d509466557e106ac4b1d7e42c85a5
+
+Tensile-commit-hash: dbc2062dced66e4cbee8e0591d76e0a1588a4c70
+
+Query device success: there are 4 devices
+-------------------------------------------------------------------------------
+Device ID 0 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+Device ID 1 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+Device ID 2 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+Device ID 3 : AMD Instinct MI300A gfx942:sramecc+:xnack-
+with 101.1 GB memory, max. SCLK 2100 MHz, max. MCLK 1300 MHz, memoryBusWidth 1024 Bytes, compute capability 9.4
+maxGridDimX 2147483647, sharedMemPerBlock 65.5 KB, maxThreadsPerBlock 1024, warpSize 64
+-------------------------------------------------------------------------------
+info: parsing of test data may take a couple minutes before any test output appears...
+
+Note: Google Test filter = *quick*:*pre_checkin*
+[==========] Running 872703 tests from 209 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from _/multiheaded
+
+rocBLAS info: Time taken to complete rocBLAS library initialization is 2395 milliseconds.
+
+rocBLAS info: Average time taken to complete rocBLAS library initialization per device is 598 milliseconds.
+
+rocBLAS info: maximum library size per device is 0.420004 GB.
+[----------] 1 test from _/multiheaded (12163 ms total)
+
+[----------] 32 tests from _/gemm_ex_get_solutions
+[----------] 32 tests from _/gemm_ex_get_solutions (685 ms total)
+
+[----------] 16 tests from _/gemm_batched_ex_get_solutions
+[----------] 16 tests from _/gemm_batched_ex_get_solutions (210 ms total)
+
+[----------] 16 tests from _/gemm_strided_batched_ex_get_solutions
+[----------] 16 tests from _/gemm_strided_batched_ex_get_solutions (191 ms total)
+
+[----------] 2 tests from _/f8_operators
+[----------] 2 tests from _/f8_operators (0 ms total)
+
+[----------] 2 tests from _/half_operators
+[----------] 2 tests from _/half_operators (0 ms total)
+
+[----------] 2 tests from _/complex_operators
+[----------] 2 tests from _/complex_operators (0 ms total)
+
+[----------] 7 tests from _/helper_utilities
+[----------] 7 tests from _/helper_utilities (0 ms total)
+
+[----------] 21 tests from _/check_numerics_vector
+[----------] 21 tests from _/check_numerics_vector (1567 ms total)
+
+[----------] 42 tests from _/check_numerics_matrix
+[----------] 42 tests from _/check_numerics_matrix (1571 ms total)
+
+[----------] 42 tests from _/check_numerics_matrix_batched
+[----------] 42 tests from _/check_numerics_matrix_batched (1846 ms total)
+
+[----------] 1 test from _/set_get_pointer_mode
+[----------] 1 test from _/set_get_pointer_mode (22 ms total)
+
+[----------] 1 test from _/set_get_atomics_mode
+[----------] 1 test from _/set_get_atomics_mode (19 ms total)
+
+[----------] 8 tests from _/logging
+[----------] 8 tests from _/logging (1584 ms total)
+
+[----------] 1 test from _/ostream_threadsafety
+[----------] 1 test from _/ostream_threadsafety (11738 ms total)
+
+[----------] 64 tests from _/set_get_vector
+[----------] 64 tests from _/set_get_vector (424 ms total)
+
+[----------] 64 tests from _/set_get_vector_async
+[----------] 64 tests from _/set_get_vector_async (936 ms total)
+
+[----------] 24 tests from _/set_get_matrix
+[----------] 24 tests from _/set_get_matrix (2 ms total)
+
+[----------] 24 tests from _/set_get_matrix_async
+[----------] 24 tests from _/set_get_matrix_async (226 ms total)
+
+[----------] 236 tests from _/asum
+[----------] 236 tests from _/asum (2342 ms total)
+
+[----------] 296 tests from _/asum_batched
+[----------] 296 tests from _/asum_batched (4876 ms total)
+
+[----------] 344 tests from _/asum_strided_batched
+[----------] 344 tests from _/asum_strided_batched (5330 ms total)
+
+[----------] 943 tests from _/axpy
+[----------] 943 tests from _/axpy (8375 ms total)
+
+[----------] 2783 tests from _/axpy_batched
+[----------] 2783 tests from _/axpy_batched (29674 ms total)
+
+[----------] 3107 tests from _/axpy_strided_batched
+[----------] 3107 tests from _/axpy_strided_batched (31847 ms total)
+
+[----------] 220 tests from _/copy
+[----------] 220 tests from _/copy (2204 ms total)
+
+[----------] 516 tests from _/copy_batched
+[----------] 516 tests from _/copy_batched (15314 ms total)
+
+[----------] 564 tests from _/copy_strided_batched
+[----------] 564 tests from _/copy_strided_batched (14966 ms total)
+
+[----------] 311 tests from _/dot
+[----------] 311 tests from _/dot (2598 ms total)
+
+[----------] 134 tests from _/dotc
+[----------] 134 tests from _/dotc (1158 ms total)
+
+[----------] 719 tests from _/dot_batched
+[----------] 719 tests from _/dot_batched (8221 ms total)
+
+[----------] 290 tests from _/dotc_batched
+[----------] 290 tests from _/dotc_batched (3569 ms total)
+
+[----------] 779 tests from _/dot_strided_batched
+[----------] 779 tests from _/dot_strided_batched (8292 ms total)
+
+[----------] 314 tests from _/dotc_strided_batched
+[----------] 314 tests from _/dotc_strided_batched (3709 ms total)
+
+[----------] 244 tests from _/iamax
+[----------] 244 tests from _/iamax (1984 ms total)
+
+[----------] 296 tests from _/iamax_batched
+[----------] 296 tests from _/iamax_batched (3065 ms total)
+
+[----------] 344 tests from _/iamax_strided_batched
+[----------] 344 tests from _/iamax_strided_batched (3814 ms total)
+
+[----------] 244 tests from _/iamin
+[----------] 244 tests from _/iamin (1981 ms total)
+
+[----------] 296 tests from _/iamin_batched
+[----------] 296 tests from _/iamin_batched (3059 ms total)
+
+[----------] 344 tests from _/iamin_strided_batched
+[----------] 344 tests from _/iamin_strided_batched (3809 ms total)
+
+[----------] 228 tests from _/nrm2
+[----------] 228 tests from _/nrm2 (1798 ms total)
+
+[----------] 292 tests from _/nrm2_batched
+[----------] 292 tests from _/nrm2_batched (3115 ms total)
+
+[----------] 340 tests from _/nrm2_strided_batched
+[----------] 340 tests from _/nrm2_strided_batched (3879 ms total)
+
+[----------] 402 tests from _/rot
+[----------] 402 tests from _/rot (3442 ms total)
+
+[----------] 438 tests from _/rot_batched
+[----------] 438 tests from _/rot_batched (4072 ms total)
+
+[----------] 510 tests from _/rot_strided_batched
+[----------] 510 tests from _/rot_strided_batched (4611 ms total)
+
+[----------] 68 tests from _/rotg
+[----------] 68 tests from _/rotg (577 ms total)
+
+[----------] 84 tests from _/rotg_batched
+[----------] 84 tests from _/rotg_batched (767 ms total)
+
+[----------] 84 tests from _/rotg_strided_batched
+[----------] 84 tests from _/rotg_strided_batched (757 ms total)
+
+[----------] 142 tests from _/rotm
+[----------] 142 tests from _/rotm (2157 ms total)
+
+[----------] 162 tests from _/rotm_batched
+[----------] 162 tests from _/rotm_batched (2299 ms total)
+
+[----------] 186 tests from _/rotm_strided_batched
+[----------] 186 tests from _/rotm_strided_batched (6573 ms total)
+
+[----------] 18 tests from _/rotmg
+[----------] 18 tests from _/rotmg (454 ms total)
+
+[----------] 26 tests from _/rotmg_batched
+[----------] 26 tests from _/rotmg_batched (921 ms total)
+
+[----------] 26 tests from _/rotmg_strided_batched
+[----------] 26 tests from _/rotmg_strided_batched (917 ms total)
+
+[----------] 1901 tests from _/scal
+[----------] 1901 tests from _/scal (16729 ms total)
+
+[----------] 2404 tests from _/scal_batched
+[----------] 2404 tests from _/scal_batched (21325 ms total)
+
+[----------] 2836 tests from _/scal_strided_batched
+[----------] 2836 tests from _/scal_strided_batched (24363 ms total)
+
+[----------] 284 tests from _/swap
+[----------] 284 tests from _/swap (3228 ms total)
+
+[----------] 324 tests from _/swap_batched
+[----------] 324 tests from _/swap_batched (8687 ms total)
+
+[----------] 372 tests from _/swap_strided_batched
+[----------] 372 tests from _/swap_strided_batched (8834 ms total)
+
+[----------] 3134 tests from _/axpy_ex
+[----------] 3134 tests from _/axpy_ex (46596 ms total)
+
+[----------] 8641 tests from _/axpy_batched_ex
+[----------] 8641 tests from _/axpy_batched_ex (119008 ms total)
+
+[----------] 9613 tests from _/axpy_strided_batched_ex
+[----------] 9613 tests from _/axpy_strided_batched_ex (125463 ms total)
+
+[----------] 427 tests from _/dot_ex
+[----------] 427 tests from _/dot_ex (4048 ms total)
+
+[----------] 887 tests from _/dot_batched_ex
+[----------] 887 tests from _/dot_batched_ex (10568 ms total)
+
+[----------] 779 tests from _/dot_strided_batched_ex
+[----------] 779 tests from _/dot_strided_batched_ex (9462 ms total)
+
+[----------] 383 tests from _/dotc_ex
+[----------] 383 tests from _/dotc_ex (3570 ms total)
+
+[----------] 887 tests from _/dotc_batched_ex
+[----------] 887 tests from _/dotc_batched_ex (10448 ms total)
+
+[----------] 959 tests from _/dotc_strided_batched_ex
+[----------] 959 tests from _/dotc_strided_batched_ex (10960 ms total)
+
+[----------] 342 tests from _/nrm2_ex
+[----------] 342 tests from _/nrm2_ex (3097 ms total)
+
+[----------] 434 tests from _/nrm2_batched_ex
+[----------] 434 tests from _/nrm2_batched_ex (4537 ms total)
+
+[----------] 506 tests from _/nrm2_strided_batched_ex
+[----------] 506 tests from _/nrm2_strided_batched_ex (5463 ms total)
+
+[----------] 560 tests from _/rot_ex
+[----------] 560 tests from _/rot_ex (6628 ms total)
+
+[----------] 640 tests from _/rot_batched_ex
+[----------] 640 tests from _/rot_batched_ex (17265 ms total)
+
+[----------] 728 tests from _/rot_strided_batched_ex
+[----------] 728 tests from _/rot_strided_batched_ex (17363 ms total)
+
+[----------] 5338 tests from _/scal_ex
+[----------] 5338 tests from _/scal_ex (46258 ms total)
+
+[----------] 6658 tests from _/scal_batched_ex
+[----------] 6658 tests from _/scal_batched_ex (67149 ms total)
+
+[----------] 7846 tests from _/scal_strided_batched_ex
+[----------] 7846 tests from _/scal_strided_batched_ex (70692 ms total)
+
+[----------] 1906 tests from _/trsv
+[----------] 1906 tests from _/trsv (17547 ms total)
+
+[----------] 5170 tests from _/trsv_batched
+[----------] 5170 tests from _/trsv_batched (48556 ms total)
+
+[----------] 8770 tests from _/trsv_strided_batched
+[----------] 8770 tests from _/trsv_strided_batched (78884 ms total)
+
+[----------] 6852 tests from _/gbmv
+[----------] 6852 tests from _/gbmv (57217 ms total)
+
+[----------] 13092 tests from _/gbmv_batched
+[----------] 13092 tests from _/gbmv_batched (106278 ms total)
+
+[----------] 13104 tests from _/gbmv_strided_batched
+[----------] 13104 tests from _/gbmv_strided_batched (105738 ms total)
+
+[----------] 1458 tests from _/gemv
+[----------] 1458 tests from _/gemv (18441 ms total)
+
+[----------] 3656 tests from _/gemv_batched
+[----------] 3656 tests from _/gemv_batched (71112 ms total)
+
+[----------] 7092 tests from _/gemv_strided_batched
+[----------] 7092 tests from _/gemv_strided_batched (104705 ms total)
+
+[----------] 858 tests from _/hbmv
+** On entry to CHBMV , parameter number  6 had an illegal value
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:183: Failure
+Expected equality of these values:
+  std::real(ta)
+    Which is: 6
+  std::real(tb)
+    Which is: 75.5
+[  FAILED  ] _/hbmv.blas2/pre_checkin_hbmv_64_f32_c_U_2_2_2_2147483649_2_1p5_1_I64, where GetParam() = { function: "hbmv", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'U', pointer_mode_host: false }
+ (18051 ms)
+** On entry to CHBMV , parameter number  6 had an illegal value
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:183: Failure
+Expected equality of these values:
+  std::real(ta)
+    Which is: 7
+  std::real(tb)
+    Which is: -52.5
+[  FAILED  ] _/hbmv.blas2/pre_checkin_hbmv_64_f32_c_L_2_2_2_2147483649_2_1p5_1_I64, where GetParam() = { function: "hbmv", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'L', pointer_mode_host: false }
+ (18100 ms)
+[----------] 858 tests from _/hbmv (42683 ms total)
+
+[----------] 2458 tests from _/hbmv_batched
+** On entry to CHBMV , parameter number  6 had an illegal value
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:563: Failure
+Expected equality of these values:
+  std::real(ta)
+    Which is: 6
+  std::real(tb)
+    Which is: 16
+[  FAILED  ] _/hbmv_batched.blas2/pre_checkin_hbmv_64_f32_c_U_2_2_2_2147483649_2_1p5_1_1_I64, where GetParam() = { function: "hbmv_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'U', pointer_mode_host: false }
+ (11525 ms)
+** On entry to CHBMV , parameter number  6 had an illegal value
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:563: Failure
+Expected equality of these values:
+  std::real(ta)
+    Which is: 7
+  std::real(tb)
+    Which is: 21.5
+[  FAILED  ] _/hbmv_batched.blas2/pre_checkin_hbmv_64_f32_c_L_2_2_2_2147483649_2_1p5_1_1_I64, where GetParam() = { function: "hbmv_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'L', pointer_mode_host: false }
+ (11502 ms)
+[----------] 2458 tests from _/hbmv_batched (41411 ms total)
+
+[----------] 6490 tests from _/hbmv_strided_batched
+** On entry to CHBMV , parameter number  6 had an illegal value
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:313: Failure
+Expected equality of these values:
+  std::real(ta)
+    Which is: 6
+  std::real(tb)
+    Which is: 16
+[  FAILED  ] _/hbmv_strided_batched.blas2/pre_checkin_hbmv_64_f32_c_U_2_2_2_2147483649_4294967298_2_4_1p5_1_2_I64, where GetParam() = { function: "hbmv_strided_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, stride_a: 4294967298, stride_x: 4, stride_y: 2, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'U', pointer_mode_host: false }
+ (11555 ms)
+** On entry to CHBMV , parameter number  6 had an illegal value
+/home/anchapman/repos/sbios/rocBLAS/clients/gtest/../include/unit.hpp:313: Failure
+Expected equality of these values:
+  std::real(ta)
+    Which is: 7
+  std::real(tb)
+    Which is: -99
+[  FAILED  ] _/hbmv_strided_batched.blas2/pre_checkin_hbmv_64_f32_c_L_2_2_2_2147483649_4294967298_2_4_1p5_1_2_I64, where GetParam() = { function: "hbmv_strided_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, stride_a: 4294967298, stride_x: 4, stride_y: 2, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'L', pointer_mode_host: false }
+ (11565 ms)
+[----------] 6490 tests from _/hbmv_strided_batched (68000 ms total)
+
+[----------] 1248 tests from _/hemv
+[----------] 1248 tests from _/hemv (9976 ms total)
+
+[----------] 4232 tests from _/hemv_batched
+[----------] 4232 tests from _/hemv_batched (31007 ms total)
+
+[----------] 11848 tests from _/hemv_strided_batched
+[----------] 11848 tests from _/hemv_strided_batched (81938 ms total)
+
+[----------] 312 tests from _/her
+[----------] 312 tests from _/her (3399 ms total)
+
+[----------] 627 tests from _/her_batched
+[----------] 627 tests from _/her_batched (9242 ms total)
+
+[----------] 1047 tests from _/her_strided_batched
+[----------] 1047 tests from _/her_strided_batched (14994 ms total)
+
+[----------] 274 tests from _/her2
+[----------] 274 tests from _/her2 (3956 ms total)
+
+[----------] 977 tests from _/her2_batched
+[----------] 977 tests from _/her2_batched (14915 ms total)
+
+[----------] 1841 tests from _/her2_strided_batched
+[----------] 1841 tests from _/her2_strided_batched (22993 ms total)
+
+[----------] 1036 tests from _/hpmv
+[----------] 1036 tests from _/hpmv (10434 ms total)
+
+[----------] 3392 tests from _/hpmv_batched
+[----------] 3392 tests from _/hpmv_batched (31009 ms total)
+
+[----------] 6464 tests from _/hpmv_strided_batched
+[----------] 6464 tests from _/hpmv_strided_batched (57773 ms total)
+
+[----------] 270 tests from _/hpr
+[----------] 270 tests from _/hpr (9671 ms total)
+
+[----------] 535 tests from _/hpr_batched
+[----------] 535 tests from _/hpr_batched (32441 ms total)
+
+[----------] 895 tests from _/hpr_strided_batched
+[----------] 895 tests from _/hpr_strided_batched (36499 ms total)
+
+[----------] 230 tests from _/hpr2
+[----------] 230 tests from _/hpr2 (3300 ms total)
+
+[----------] 457 tests from _/hpr2_batched
+[----------] 457 tests from _/hpr2_batched (9008 ms total)
+
+[----------] 833 tests from _/hpr2_strided_batched
+[----------] 833 tests from _/hpr2_strided_batched (20208 ms total)
+
+[----------] 2972 tests from _/trmv
+[----------] 2972 tests from _/trmv (26761 ms total)
+
+[----------] 5726 tests from _/trmv_batched
+[----------] 5726 tests from _/trmv_batched (49478 ms total)
+
+[----------] 5660 tests from _/trmv_strided_batched
+[----------] 5660 tests from _/trmv_strided_batched (48971 ms total)
+
+[----------] 1990 tests from _/tpmv
+[----------] 1990 tests from _/tpmv (18512 ms total)
+
+[----------] 2364 tests from _/tpmv_batched
+[----------] 2364 tests from _/tpmv_batched (22090 ms total)
+
+[----------] 1896 tests from _/tpmv_strided_batched
+[----------] 1896 tests from _/tpmv_strided_batched (19250 ms total)
+
+[----------] 5218 tests from _/tbmv
+[----------] 5218 tests from _/tbmv (49053 ms total)
+
+[----------] 9970 tests from _/tbmv_batched
+[----------] 9970 tests from _/tbmv_batched (91176 ms total)
+
+[----------] 20338 tests from _/tbmv_strided_batched
+[----------] 20338 tests from _/tbmv_strided_batched (176062 ms total)
+
+[----------] 1500 tests from _/tbsv
+[----------] 1500 tests from _/tbsv (13751 ms total)
+
+[----------] 3068 tests from _/tbsv_batched
+[----------] 3068 tests from _/tbsv_batched (26665 ms total)
+
+[----------] 4892 tests from _/tbsv_strided_batched
+[----------] 4892 tests from _/tbsv_strided_batched (47372 ms total)
+
+[----------] 1942 tests from _/tpsv
+[----------] 1942 tests from _/tpsv (17843 ms total)
+
+[----------] 3958 tests from _/tpsv_batched
+[----------] 3958 tests from _/tpsv_batched (34898 ms total)
+
+[----------] 6646 tests from _/tpsv_strided_batched
+[----------] 6646 tests from _/tpsv_strided_batched (60474 ms total)
+
+[----------] 378 tests from _/ger
+[----------] 378 tests from _/ger (10535 ms total)
+
+[----------] 1170 tests from _/ger_batched
+[----------] 1170 tests from _/ger_batched (14218 ms total)
+
+[----------] 1531 tests from _/ger_strided_batched
+[----------] 1531 tests from _/ger_strided_batched (19773 ms total)
+
+[----------] 144 tests from _/geru
+[----------] 144 tests from _/geru (7612 ms total)
+
+[----------] 379 tests from _/geru_batched
+[----------] 379 tests from _/geru_batched (22845 ms total)
+
+[----------] 335 tests from _/geru_strided_batched
+[----------] 335 tests from _/geru_strided_batched (35128 ms total)
+
+[----------] 144 tests from _/gerc
+[----------] 144 tests from _/gerc (7384 ms total)
+
+[----------] 379 tests from _/gerc_batched
+[----------] 379 tests from _/gerc_batched (22416 ms total)
+
+[----------] 335 tests from _/gerc_strided_batched
+[----------] 335 tests from _/gerc_strided_batched (34816 ms total)
+
+[----------] 576 tests from _/spr
+[----------] 576 tests from _/spr (8717 ms total)
+
+[----------] 1166 tests from _/spr_batched
+[----------] 1166 tests from _/spr_batched (25216 ms total)
+
+[----------] 2125 tests from _/spr_strided_batched
+[----------] 2125 tests from _/spr_strided_batched (35370 ms total)
+
+[----------] 236 tests from _/spr2
+[----------] 236 tests from _/spr2 (3602 ms total)
+
+[----------] 471 tests from _/spr2_batched
+[----------] 471 tests from _/spr2_batched (10459 ms total)
+
+[----------] 831 tests from _/spr2_strided_batched
+[----------] 831 tests from _/spr2_strided_batched (12600 ms total)
+
+[----------] 614 tests from _/syr
+[----------] 614 tests from _/syr (9080 ms total)
+
+[----------] 1279 tests from _/syr_batched
+[----------] 1279 tests from _/syr_batched (26845 ms total)
+
+[----------] 1279 tests from _/syr_strided_batched
+[----------] 1279 tests from _/syr_strided_batched (25201 ms total)
+
+[----------] 696 tests from _/syr2
+[----------] 696 tests from _/syr2 (7857 ms total)
+
+[----------] 2529 tests from _/syr2_batched
+[----------] 2529 tests from _/syr2_batched (28727 ms total)
+
+[----------] 4689 tests from _/syr2_strided_batched
+[----------] 4689 tests from _/syr2_strided_batched (46146 ms total)
+
+[----------] 361 tests from _/sbmv
+[----------] 361 tests from _/sbmv (2917 ms total)
+
+[----------] 1321 tests from _/sbmv_batched
+[----------] 1321 tests from _/sbmv_batched (20202 ms total)
+
+[----------] 119 tests from _/sbmv_strided_batched
+[----------] 119 tests from _/sbmv_strided_batched (1814 ms total)
+
+[----------] 293 tests from _/spmv
+[----------] 293 tests from _/spmv (2560 ms total)
+
+[----------] 1090 tests from _/spmv_batched
+[----------] 1090 tests from _/spmv_batched (392329 ms total)
+
+[----------] 1092 tests from _/spmv_strided_batched
+[----------] 1092 tests from _/spmv_strided_batched (25929 ms total)
+
+[----------] 529 tests from _/symv
+[----------] 529 tests from _/symv (4993 ms total)
+
+[----------] 771 tests from _/symv_batched
+[----------] 771 tests from _/symv_batched (191284 ms total)
+
+[----------] 767 tests from _/symv_strided_batched
+[----------] 767 tests from _/symv_strided_batched (191471 ms total)
+
+[----------] 84763 tests from _/gemm
+[----------] 84763 tests from _/gemm (945296 ms total)
+
+[----------] 9080 tests from _/gemm_batched
+[----------] 9080 tests from _/gemm_batched (138327 ms total)
+
+[----------] 7664 tests from _/gemm_strided_batched
+[----------] 7664 tests from _/gemm_strided_batched (100711 ms total)
+
+[----------] 211108 tests from _/gemm_ex
+[----------] 211108 tests from _/gemm_ex (2498619 ms total)
+
+[----------] 13262 tests from _/gemm_batched_ex
+[----------] 13262 tests from _/gemm_batched_ex (178928 ms total)
+
+[----------] 15543 tests from _/gemm_strided_batched_ex
+[----------] 15543 tests from _/gemm_strided_batched_ex (187757 ms total)
+
+[----------] 280 tests from _/symm
+[----------] 280 tests from _/symm (3710 ms total)
+
+[----------] 532 tests from _/symm_batched
+[----------] 532 tests from _/symm_batched (11021 ms total)
+
+[----------] 532 tests from _/symm_strided_batched
+[----------] 532 tests from _/symm_strided_batched (10618 ms total)
+
+[----------] 240 tests from _/hemm
+[----------] 240 tests from _/hemm (2815 ms total)
+
+[----------] 460 tests from _/hemm_batched
+[----------] 460 tests from _/hemm_batched (7760 ms total)
+
+[----------] 460 tests from _/hemm_strided_batched
+[----------] 460 tests from _/hemm_strided_batched (7708 ms total)
+
+[----------] 11973 tests from _/trsm
+[----------] 11973 tests from _/trsm (137647 ms total)
+
+[----------] 2534 tests from _/trsm_ex
+[----------] 2534 tests from _/trsm_ex (30676 ms total)
+
+[----------] 8321 tests from _/trsm_batched
+[----------] 8321 tests from _/trsm_batched (99478 ms total)
+
+[----------] 1794 tests from _/trsm_batched_ex
+[----------] 1794 tests from _/trsm_batched_ex (19800 ms total)
+
+[----------] 8193 tests from _/trsm_strided_batched
+[----------] 8193 tests from _/trsm_strided_batched (117005 ms total)
+
+[----------] 3490 tests from _/trsm_strided_batched_ex
+[----------] 3490 tests from _/trsm_strided_batched_ex (45743 ms total)
+
+[----------] 544 tests from _/trtri
+[----------] 544 tests from _/trtri (9633 ms total)
+
+[----------] 1600 tests from _/trtri_batched
+[----------] 1600 tests from _/trtri_batched (38258 ms total)
+
+[----------] 1600 tests from _/trtri_strided_batched
+[----------] 1600 tests from _/trtri_strided_batched (34834 ms total)
+
+[----------] 2380 tests from _/trmm
+[----------] 2380 tests from _/trmm (53661 ms total)
+
+[----------] 912 tests from _/trmm_batched
+[----------] 912 tests from _/trmm_batched (143584 ms total)
+
+[----------] 920 tests from _/trmm_strided_batched
+[----------] 920 tests from _/trmm_strided_batched (71409 ms total)
+
+[----------] 190 tests from _/syrk
+[----------] 190 tests from _/syrk (2166 ms total)
+
+[----------] 340 tests from _/syrk_batched
+[----------] 340 tests from _/syrk_batched (5680 ms total)
+
+[----------] 340 tests from _/syrk_strided_batched
+[----------] 340 tests from _/syrk_strided_batched (5151 ms total)
+
+[----------] 824 tests from _/syrkx
+[----------] 824 tests from _/syrkx (10581 ms total)
+
+[----------] 1206 tests from _/syrkx_batched
+[----------] 1206 tests from _/syrkx_batched (19288 ms total)
+
+[----------] 694 tests from _/syrkx_strided_batched
+[----------] 694 tests from _/syrkx_strided_batched (10677 ms total)
+
+[----------] 624 tests from _/syr2k
+[----------] 624 tests from _/syr2k (8158 ms total)
+
+[----------] 692 tests from _/syr2k_batched
+[----------] 692 tests from _/syr2k_batched (10885 ms total)
+
+[----------] 692 tests from _/syr2k_strided_batched
+[----------] 692 tests from _/syr2k_strided_batched (10573 ms total)
+
+[----------] 276 tests from _/herk
+[----------] 276 tests from _/herk (3122 ms total)
+
+[----------] 528 tests from _/herk_batched
+[----------] 528 tests from _/herk_batched (8875 ms total)
+
+[----------] 400 tests from _/herk_strided_batched
+[----------] 400 tests from _/herk_strided_batched (4680 ms total)
+
+[----------] 436 tests from _/herkx
+[----------] 436 tests from _/herkx (5870 ms total)
+
+[----------] 848 tests from _/herkx_batched
+[----------] 848 tests from _/herkx_batched (16145 ms total)
+
+[----------] 592 tests from _/herkx_strided_batched
+[----------] 592 tests from _/herkx_strided_batched (8144 ms total)
+
+[----------] 436 tests from _/her2k
+[----------] 436 tests from _/her2k (5520 ms total)
+
+[----------] 592 tests from _/her2k_batched
+[----------] 592 tests from _/her2k_batched (9397 ms total)
+
+[----------] 464 tests from _/her2k_strided_batched
+[----------] 464 tests from _/her2k_strided_batched (6110 ms total)
+
+[----------] 124 tests from _/dgmm
+[----------] 124 tests from _/dgmm (1775 ms total)
+
+[----------] 188 tests from _/dgmm_batched
+[----------] 188 tests from _/dgmm_batched (3027 ms total)
+
+[----------] 340 tests from _/dgmm_strided_batched
+[----------] 340 tests from _/dgmm_strided_batched (5857 ms total)
+
+[----------] 1662 tests from _/geam
+[----------] 1662 tests from _/geam (22382 ms total)
+
+[----------] 2746 tests from _/geam_batched
+[----------] 2746 tests from _/geam_batched (37932 ms total)
+
+[----------] 5374 tests from _/geam_strided_batched
+[----------] 5374 tests from _/geam_strided_batched (142035 ms total)
+
+[----------] 208 tests from _/gemmt
+[----------] 208 tests from _/gemmt (2330 ms total)
+
+[----------] 600 tests from _/gemmt_batched
+[----------] 600 tests from _/gemmt_batched (9620 ms total)
+
+[----------] 1828 tests from _/gemmt_strided_batched
+[----------] 1828 tests from _/gemmt_strided_batched (34413 ms total)
+
+[----------] 1476 tests from _/geam_ex
+[----------] 1476 tests from _/geam_ex (24150 ms total)
+
+[----------] 19226 tests from _/gemm_ex3
+[----------] 19226 tests from _/gemm_ex3 (212809 ms total)
+
+[----------] 76898 tests from _/gemm_batched_ex3
+[----------] 76898 tests from _/gemm_batched_ex3 (797785 ms total)
+
+[----------] 76898 tests from _/gemm_strided_batched_ex3
+[----------] 76898 tests from _/gemm_strided_batched_ex3 (793685 ms total)
+
+[----------] Global test environment tear-down
+[==========] 872703 tests from 209 test suites ran. (11139897 ms total)
+[  PASSED  ] 872697 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] _/hbmv.blas2/pre_checkin_hbmv_64_f32_c_U_2_2_2_2147483649_2_1p5_1_I64, where GetParam() = { function: "hbmv", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'U', pointer_mode_host: false }
+
+[  FAILED  ] _/hbmv.blas2/pre_checkin_hbmv_64_f32_c_L_2_2_2_2147483649_2_1p5_1_I64, where GetParam() = { function: "hbmv", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'L', pointer_mode_host: false }
+
+[  FAILED  ] _/hbmv_batched.blas2/pre_checkin_hbmv_64_f32_c_U_2_2_2_2147483649_2_1p5_1_1_I64, where GetParam() = { function: "hbmv_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'U', pointer_mode_host: false }
+
+[  FAILED  ] _/hbmv_batched.blas2/pre_checkin_hbmv_64_f32_c_L_2_2_2_2147483649_2_1p5_1_1_I64, where GetParam() = { function: "hbmv_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'L', pointer_mode_host: false }
+
+[  FAILED  ] _/hbmv_strided_batched.blas2/pre_checkin_hbmv_64_f32_c_U_2_2_2_2147483649_4294967298_2_4_1p5_1_2_I64, where GetParam() = { function: "hbmv_strided_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, stride_a: 4294967298, stride_x: 4, stride_y: 2, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'U', pointer_mode_host: false }
+
+[  FAILED  ] _/hbmv_strided_batched.blas2/pre_checkin_hbmv_64_f32_c_L_2_2_2_2147483649_4294967298_2_4_1p5_1_2_I64, where GetParam() = { function: "hbmv_strided_batched", name: "hbmv_64", category: "pre_checkin", known_bug_platforms: "", alpha: 2.0, alphai: -0.5, beta: 1.5, betai: 0.5, stride_a: 4294967298, stride_x: 4, stride_y: 2, N: 2, K: 2, lda: 2147483649, incx: 2, incy: 1, a_type: f32_c, b_type: f32_c, c_type: f32_c, d_type: f32_c, compute_type: f32_c, composite_compute_type: invalid, initialization: rand_int, os_flags: 1, gpu_arch: "", api: 1, flush_batch_count: 1, uplo: 'L', pointer_mode_host: false }
+
+
+ 6 FAILED TESTS
+rocBLAS version: 4.2.0.54f305c1
+
+command line: ./rocblas-test --gtest_filter=*quick*:*pre_checkin*
